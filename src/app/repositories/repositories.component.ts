@@ -18,13 +18,13 @@ export class RepositoriesComponent implements OnInit {
   reposArray:any;
 
 
-  link1 = environment.link1;
-  link2 = environment.link2;
+  // link1 = environment.link1;
+  // link2 = environment.link2;
 
-
+  
 
   access_token= environment.access_token;
-  access_token2= environment.access_token2;
+  // access_token2= environment.access_token2;
 
 
   search: any;
@@ -36,8 +36,8 @@ export class RepositoriesComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
 searchRepos(searchrepo:HTMLInputElement){
-  let wholelink2 = this.link2 + "repositories"+ this.access_token2 + searchrepo.value;
-     this.http.get(wholelink2).subscribe((res3:Response) =>{
+  let wholelink = this.access_token + "repositories" + searchrepo.value;
+     this.http.get(wholelink).subscribe((res3:Response) =>{
       // this.search = new Search(res3.json().items);
       // this.searchArray = res3.json().items;
       console.log(res3.json());
