@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfilesService } from '../profiles.service';
 
 @Component({
   selector: 'app-not-found',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ProfilesService:  ProfilesService) {
+    this.ProfilesService.getProfileInfo().subscribe(profile => {
+      console.log(profile);
+    })
+   }
 
   ngOnInit() {
   }

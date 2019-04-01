@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PersonalComponent } from './personal/personal.component';
 import { HighlightDirective } from './highlight.directive';
+import { ProfilesService } from './profiles.service';
 
 
 //Deifining Routes
@@ -43,7 +44,7 @@ const routes: Routes=[
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ProfilesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
